@@ -1,7 +1,5 @@
 {
   "projects": {
-    "default": "gallery-flutter-dev",
-    "prod": "gallery-flutter-dev",
-    "staging": "gallery-staging-flutter-dev"
+    "default": "ngens-2f35c"
   }
 }

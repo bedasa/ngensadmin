@@ -221,7 +221,7 @@ class _RallyPieChartOutlineBoxPainter extends BoxPainter {
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     // Create two padded reacts to draw arcs in: one for colored arcs and one for
     // inner bg arc.
-    const strokeWidth = 4.0;
+    const strokeWidth = 40.0;
     final outerRadius = math.min(
           configuration.size.width,
           configuration.size.height,
