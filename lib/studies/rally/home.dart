@@ -3,6 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+
+import 'package:flutter/cupertino.dart';
 import 'package:ngens/data/gallery_options.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:ngens/layout/adaptive.dart';
@@ -27,6 +29,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  bool isAuth = false;
 
   @override
   void initState() {

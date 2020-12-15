@@ -1,4 +1,4 @@
-package io.flutter.demo.gallery
+package com.xnihilo.ngens
 
 import io.flutter.embedding.android.FlutterActivity
 

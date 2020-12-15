@@ -12,6 +12,18 @@ import 'package:ngens/layout/image_placeholder.dart';
 import 'package:ngens/layout/text_scale.dart';
 import 'package:ngens/studies/rally/app.dart';
 import 'package:ngens/studies/rally/colors.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:ngens/models/user.dart';
+import 'package:ngens/studies/rally/pages/create_account.dart';
+
+final DateTime timestamp = DateTime.now();
+final GoogleSignIn googleSignIn = GoogleSignIn();
+final StorageReference storageRef = FirebaseStorage.instance.ref();
+final usersRef = FirebaseFirestore.instance.collection('users');
+final postsRef = FirebaseFirestore.instance.collection('posts');
+User currentUser;
 
 class LoginPage extends StatefulWidget {
   const LoginPage();
@@ -23,6 +35,72 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Detects when user signed in
+    googleSignIn.onCurrentUserChanged.listen((account) {
+      handleSignIn(account);
+    }, onError: (dynamic err) {
+      print('Error signing in: $err');
+    });
+    // Reauthenticate user when app is opened
+    googleSignIn.signInSilently(suppressErrors: false).then((account) {
+      handleSignIn(account);
+    }).catchError((dynamic err) {
+      print('Error signing in: $err');
+    });
+  }
+
+  void handleSignIn(GoogleSignInAccount account) {
+    if (account != null) {
+      createUserInFirestore();
+      setState(() {
+        Navigator.of(context).pushNamed(RallyApp.homeRoute);
+      });
+    } else {
+      setState(() {
+        // isAuth = false;
+      });
+    }
+  }
+
+  void createUserInFirestore() async {
+    try {
+      // 1) check if user exists in users collection in database (according to their id)
+      final user = googleSignIn.currentUser;
+      var doc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.id)
+          .get();
+
+      if (!doc.exists) {
+        // 2) if the user doesn't exist, then we want to take them to the create account page
+        final String username = await Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CreateAccount()));
+
+        // 3) get username from create account, use it to make new user document in users collection
+        var data = {
+          'id': user.id,
+          'username': username,
+          'photoUrl': user.photoUrl,
+          'email': user.email,
+          'displayName': user.displayName,
+          'bio': '',
+          'timestamp': timestamp
+        };
+        await usersRef.doc(user.id).set(data);
+
+        doc = await usersRef.doc(user.id).get();
+      }
+
+      currentUser = User.fromDocument(doc);
+    } catch (e) {
+      rethrow;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +134,16 @@ class _MainView extends StatelessWidget {
 
   final TextEditingController usernameController;
   final TextEditingController passwordController;
+  void login() {
+    googleSignIn.signIn();
+  }
+
+  void logout() {
+    googleSignIn.signOut();
+  }
 
   void _login(BuildContext context) {
-    Navigator.of(context).pushNamed(RallyApp.homeRoute);
+    googleSignIn.signIn();
   }
 
   @override
