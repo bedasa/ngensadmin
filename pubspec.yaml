@@ -11,7 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ">=0.16.1 <=0.17.0"
+  intl: ^0.16.1
+  rapido: ^0.2.4
   flutter_localized_locales: ">=1.1.1 <=2.0.0"
   cupertino_icons: ^1.0.0
   rally_assets: ^2.0.0
@@ -31,7 +32,7 @@ dependencies:
   firebase_core: ^0.5.0+1
   cloud_firestore: ^0.14.2
   firebase_storage: ^4.0.1
-  firebase_auth: ^0.18.2
+  firebase_auth: ^0.18.3
   image_picker: ^0.6.0+2
   google_sign_in: ^4.5.5
   geolocator: 6.1.3
