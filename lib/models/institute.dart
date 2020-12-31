@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ngens/models/root.dart';
 
-class Institute extends Root {
+class Institute extends Root<Institute> {
   final String name;
   final String email;
   final String logoUrl;
@@ -49,4 +49,28 @@ class Institute extends Root {
     // TODO: implement getData
     throw UnimplementedError();
   }
+
+  @override
+  parse(DocumentSnapshot documentSnapshot) {
+    // TODO: implement parse
+    throw UnimplementedError();
+  }
+
+  static Map<String, String> getLabels() {
+    return {
+      'id': 'id',
+      'orgId': 'orgId',
+      'context': 'context',
+      'lastUpdatedBy': 'lastUpdatedBy',
+      'lastUpdatedTime': 'lastUpdatedTime',
+      'createdBy': 'createdBy',
+      'createdTime': 'createdTime',
+      'email': 'email',
+      'name': 'name',
+      'logoUrl': 'photoUrl',
+      'displayName': 'displayName'
+    };
+  }
+
+  static Map<String, String> getLables() {}
 }

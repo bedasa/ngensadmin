@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 
 import 'package:ngens/models/root.dart';
 
-class User extends Root {
+class User extends Root<User> {
   final String username;
   final String email;
   final String photoUrl;
@@ -53,19 +53,44 @@ class User extends Root {
   }
 
   factory User.fromDocument(DocumentSnapshot doc) {
-    return User(
-      id: doc['id'] as String,
-      orgId: doc['orgId'] as String,
-      context: doc['context'] as String,
-      lastUpdatedBy: doc['lastUpdatedBy'] as String,
-      lastUpdatedTime: doc['lastUpdatedTime'] as DateTime,
-      createdBy: doc['createdBy'] as String,
-      createdTime: doc['createdTime'] as DateTime,
-      email: doc['email'] as String,
-      username: doc['username'] as String,
-      photoUrl: doc['photoUrl'] as String,
-      displayName: doc['displayName'] as String,
-      bio: doc['bio'] as String,
-    );
+    var user = User(
+        id: doc['id'] as String,
+        orgId: doc['orgId'] as String,
+        context: doc['context'] as String,
+        lastUpdatedBy: doc['lastUpdatedBy'] as String,
+        lastUpdatedTime: (doc['lastUpdatedTime'] as Timestamp).toDate(),
+        createdBy: doc['createdBy'] as String,
+        createdTime: (doc['createdTime'] as Timestamp).toDate(),
+        email: doc['email'] as String,
+        username: doc['username'] as String,
+        photoUrl: doc['photoUrl'] as String,
+        displayName: doc['displayName'] as String,
+        bio: doc['bio'] as String);
+    user.exists = true;
+    return user;
   }
+
+  @override
+  User parse(DocumentSnapshot documentSnapshot) {
+    return User.fromDocument(documentSnapshot);
+  }
+
+  Map<String, String> getLabels() {
+    return {
+      'id': 'id',
+      'orgId': 'orgId',
+      'context': 'context',
+      'lastUpdatedBy': 'lastUpdatedBy',
+      'lastUpdatedTime': 'lastUpdatedTime',
+      'createdBy': 'createdBy',
+      'createdTime': 'createdTime',
+      'username': 'username',
+      'photoUrl': 'photoUrl',
+      'email': 'email',
+      'displayName': 'displayName',
+      'bio': 'bio'
+    };
+  }
+
+  static Map<String, String> getLables() {}
 }

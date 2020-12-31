@@ -3,20 +3,16 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:convert' show JsonEncoder;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:ngens/data/demos.dart';
+
 import 'package:ngens/main.dart' show GalleryApp;
 
 // See transitions_perf_test.dart for how to run this test.
 
 Future<String> _handleMessages(String message) async {
   switch (message) {
-    case 'demoDescriptions':
-      final demoDescriptions = allGalleryDemoDescriptions();
-      return const JsonEncoder.withIndent('  ').convert(demoDescriptions);
     case 'isTestingCraneOnly':
       return const String.fromEnvironment('onlyCrane', defaultValue: 'false');
     case 'isTestingReplyOnly':

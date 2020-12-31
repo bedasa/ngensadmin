@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ngens/data/gallery_options.dart';
-import 'package:ngens/pages/backdrop.dart';
 
 void main() {
   testWidgets('Home page hides settings semantics when closed', (tester) async {
@@ -16,10 +15,6 @@ void main() {
         home: ModelBinding(
           initialModel: const GalleryOptions(
             textScaleFactor: 1.0,
-          ),
-          child: const Backdrop(
-            settingsPage: Text('Front'),
-            homePage: Text('Back'),
           ),
         ),
       ),

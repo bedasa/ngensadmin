@@ -1,14 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ngens/main.dart';
-import 'package:ngens/pages/demo.dart';
-import 'package:ngens/pages/home.dart';
-import 'package:ngens/studies/crane/app.dart';
-import 'package:ngens/studies/fortnightly/app.dart';
-import 'package:ngens/studies/rally/app.dart';
-import 'package:ngens/studies/reply/app.dart';
-import 'package:ngens/studies/shrine/app.dart';
-import 'package:ngens/studies/starter/app.dart';
+
+import 'package:ngens/app.dart';
 
 typedef PathWidgetBuilder = Widget Function(BuildContext, String);
 
@@ -37,43 +30,7 @@ class RouteConfiguration {
   /// in the list below. As soon as there is a match, the associated builder
   /// will be returned. This means that the paths higher up in the list will
   /// take priority.
-  static List<Path> paths = [
-    Path(
-      r'^' + DemoPage.baseRoute + r'/([\w-]+)$',
-      (context, match) => DemoPage(slug: match),
-    ),
-    Path(
-      r'^' + RallyApp.homeRoute,
-      (context, match) => const StudyWrapper(study: RallyApp()),
-    ),
-    Path(
-      r'^' + ShrineApp.homeRoute,
-      (context, match) => const StudyWrapper(study: ShrineApp()),
-    ),
-    Path(
-      r'^' + CraneApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: CraneApp()),
-    ),
-    Path(
-      r'^' + FortnightlyApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: FortnightlyApp()),
-    ),
-    Path(
-      r'^' + ReplyApp.homeRoute,
-      (context, match) => const StudyWrapper(
-        alignment: AlignmentDirectional.topCenter,
-        study: ReplyApp(),
-      ),
-    ),
-    Path(
-      r'^' + StarterApp.defaultRoute,
-      (context, match) => const StudyWrapper(study: StarterApp()),
-    ),
-    Path(
-      r'^/',
-      (context, match) => const RootPage(),
-    ),
-  ];
+  static List<Path> paths = [];
 
   /// The route generator callback used when the app is navigated to a named
   /// route. Set it on the [MaterialApp.onGenerateRoute] or

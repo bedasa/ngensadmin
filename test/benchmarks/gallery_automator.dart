@@ -7,7 +7,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:ngens/data/demos.dart';
 import 'package:ngens/main.dart';
 
 import 'scroll.dart';
@@ -67,9 +66,6 @@ class GalleryAutomator {
   /// A widget controller for automation.
   LiveWidgetController controller;
 
-  /// An iterable that generates all demo names.
-  Iterable<String> get demoNames => allGalleryDemoDescriptions();
-
   /// The gallery widget, with automation.
   Widget createWidget() {
     // There is no `catchError` here, because all errors are caught by
@@ -86,56 +82,10 @@ class GalleryAutomator {
     await warmUp();
 
     print('==== List of demos to be run ====');
-    for (final demo in demoNames) {
-      if (shouldRunPredicate(demo)) {
-        print(demo);
-      }
-    }
+
     print('==== End of list of demos to be run ====');
 
     var finishedStudyDemos = false;
-
-    for (final demo in demoNames) {
-      if (!finishedStudyDemos && typeOfDemo(demo) != DemoType.study) {
-        finishedStudyDemos = true;
-
-        await scrollUntilVisible(
-          element: find.text('Categories').evaluate().single,
-          strict: true,
-          animated: false,
-        );
-      }
-
-      final demoButton =
-          find.byKey(ValueKey(demo), skipOffstage: false).evaluate().single;
-
-      await scrollUntilVisible(
-        element: demoButton,
-        animated: false,
-      );
-
-      // Run demo if it passes `runCriterion`.
-      // Note that the above scrolling is required even for demos *not*
-      // satisfying `runCriterion`, because we need to scroll
-      // through every `Scrollable` to find the `demoButton`.
-      if (shouldRunPredicate(demo)) {
-        print('Running demo "$demo"');
-
-        for (var i = 0; i < 2; ++i) {
-          await controller.tap(find.byKey(ValueKey(demo)));
-
-          if (typeOfDemo(demo) == DemoType.animatedWidget) {
-            await Future<void>.delayed(_defaultWaitingDuration);
-          } else {
-            await animationStops();
-          }
-
-          await controller.tap(find.byKey(const ValueKey('Back')));
-
-          await animationStops();
-        }
-      }
-    }
 
     print('All demos finished.');
 
@@ -149,36 +99,7 @@ class GalleryAutomator {
 
     print('Running scrolling test.');
 
-    final selectedDemos = firstDemosOfCategories(demoNames);
-
     var scrolled = false;
-
-    // For each category
-    for (final demo in selectedDemos) {
-      // Scroll to that category
-      if (!scrolled && categoryOf(demo) != 'study') {
-        scrolled = true;
-        await scrollUntilVisible(
-          element: find.text('Categories').evaluate().single,
-          strict: true,
-        );
-      } else if (scrolled && categoryOf(demo) == 'study') {
-        scrolled = false;
-        final pageScrollable =
-            Scrollable.of(find.text('Categories').evaluate().single);
-        await scrollToExtreme(scrollable: pageScrollable, toEnd: false);
-      }
-
-      // Scroll that scrollable
-      final demoButton =
-          find.byKey(ValueKey(demo), skipOffstage: false).evaluate().single;
-      final scrollable = Scrollable.of(demoButton);
-
-      for (var i = 0; i < 2; ++i) {
-        await scrollToExtreme(scrollable: scrollable, toEnd: true);
-        await scrollToExtreme(scrollable: scrollable, toEnd: false);
-      }
-    }
 
     print('Scrolling test finished.');
     finished = true;
@@ -193,41 +114,6 @@ class GalleryAutomator {
 
     // Set controller.
     controller = LiveWidgetController(WidgetsBinding.instance);
-
-    // Find first demo of each category.
-    final candidateDemos = firstDemosOfCategories(demoNames);
-
-    // Find first demo that is not being tested here.
-    // We open this demo as a way to warm up the engine, so we need to use an
-    // untested demo to avoid biasing the benchmarks.
-    String firstUntestedDemo;
-    for (final demo in candidateDemos) {
-      if (testScrollsOnly || !shouldRunPredicate(demo)) {
-        firstUntestedDemo = demo;
-        break;
-      }
-    }
-    assert(firstUntestedDemo != null);
-
-    // Open and close the demo twice to warm up.
-    for (var i = 0; i < 2; ++i) {
-      await controller.tap(find.byKey(ValueKey(firstUntestedDemo)));
-
-      if (typeOfDemo(firstUntestedDemo) == DemoType.animatedWidget) {
-        await Future<void>.delayed(_defaultWaitingDuration);
-      } else {
-        await animationStops();
-      }
-
-      await controller.tap(find.byKey(const ValueKey('Back')));
-
-      await animationStops();
-    }
-
-    // When warm-up finishes, inform the recorder.
-    stopWarmingUpCallback();
-
-    print('Warm-up finished.');
   }
 
   /// A function to find the category of a demo.
