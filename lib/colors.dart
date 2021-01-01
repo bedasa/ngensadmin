@@ -29,15 +29,15 @@ class RallyColors {
     Color(0xFF0082FB),
   ];
 
-  static const Color gray = Color(0x03FEFEFE);
+  static const Color gray = Color(0xFFD8D8D8);
   static const Color gray60 = Color(0x99D8D8D8);
   static const Color gray25 = Color(0x40D8D8D8);
-  static const Color white60 = Color(0x03FEFEFE);
-  static const Color primaryBackground = Color(0xFFE6EBEB);
-  static const Color inputBackground = Color(0xFFD8D8D8);
-  static const Color cardBackground = Color(0xFFD8D8D8);
-  static const Color buttonColor = Color(0xFFB93C5D);
-  static const Color focusColor = Color(0x0DFFFFFF);
+  static const Color white60 = Color(0x99FFFFFF);
+  static const Color primaryBackground = Color(0xFF33333D);
+  static const Color inputBackground = Color(0xFF26282F);
+  static const Color cardBackground = Color(0x03FEFEFE);
+  static const Color buttonColor = Color(0xFF09AF79);
+  static const Color focusColor = Color(0xCCFFFFFF);
   static const Color dividerColor = Color(0xAA282828);
 
   /// Convenience method to get a single account color with position i.
