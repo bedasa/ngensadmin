@@ -12,8 +12,8 @@ import 'package:ngens/layout/text_scale.dart';
 import 'package:ngens/tabs/accounts.dart';
 import 'package:ngens/tabs/bills.dart';
 import 'package:ngens/tabs/budgets.dart';
-import 'package:ngens/tabs/overview.dart';
-import 'package:ngens/tabs/settings.dart';
+import 'package:ngens/tabs/dashboard.dart';
+import 'package:ngens/tabs/masters.dart';
 
 const int tabCount = 5;
 const int turnsToRotateRight = 1;
@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage>
       _RallyTab(
         theme: theme,
         iconData: Icons.pie_chart,
-        title: GalleryLocalizations.of(context).rallyTitleOverview,
+        title: 'Dashboard',
         tabIndex: 0,
         tabController: _tabController,
         isVertical: isVertical,
@@ -199,7 +199,7 @@ class _HomePageState extends State<HomePage>
       _RallyTab(
         theme: theme,
         iconData: Icons.settings,
-        title: GalleryLocalizations.of(context).rallyTitleSettings,
+        title: 'Masters',
         tabIndex: 4,
         tabController: _tabController,
         isVertical: isVertical,
@@ -209,11 +209,11 @@ class _HomePageState extends State<HomePage>
 
   List<Widget> _buildTabViews() {
     return [
-      OverviewView(),
+      DashboardView(),
       AccountsView(),
       BillsView(),
       BudgetsView(),
-      SettingsView(),
+      MastersView()
     ];
   }
 }

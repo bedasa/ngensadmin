@@ -46,7 +46,7 @@ class _MastersItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: RallyColors.primaryBackground,
+        primary: RallyColors.submenu,
         padding: EdgeInsets.zero,
       ),
       child: Container(

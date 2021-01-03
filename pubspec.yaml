@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  syncfusion_flutter_calendar: ^18.4.32
+  table_calendar: ^2.3.3
   intl: ^0.16.1
   rapido: ^0.2.4
   flutter_localized_locales: ">=1.1.1 <=2.0.0"
@@ -51,16 +53,17 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test:
+
   path:
   args:
   grinder: ^0.8.0
   pedantic: ^1.9.0
   string_scanner: ^1.0.5
-  web_benchmarks: ^0.0.2
+
 
 flutter:
   assets:
+    - images/
     - packages/flutter_gallery_assets/assets/studies/shrine_card_dark.png
     - packages/flutter_gallery_assets/assets/studies/starter_card.png
     - packages/flutter_gallery_assets/assets/studies/starter_card_dark.png

@@ -40,6 +40,8 @@ class RallyColors {
   static const Color focusColor = Color(0xCCFFFFFF);
   static const Color dividerColor = Color(0xAA282828);
 
+  static const Color submenu = Color(0x99FFFFFF);
+
   /// Convenience method to get a single account color with position i.
   static Color accountColor(int i) {
     return cycledColor(accountColors, i);
