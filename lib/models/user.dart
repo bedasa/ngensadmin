@@ -3,14 +3,14 @@ import 'package:meta/meta.dart';
 
 import 'package:ngens/models/root.dart';
 
-class User extends Root<User> {
+class RUser extends Root<RUser> {
   final String username;
   final String email;
   final String photoUrl;
   final String displayName;
   final String bio;
 
-  User({
+  RUser({
     @required String id,
     @required String orgId,
     @required String context,
@@ -52,8 +52,8 @@ class User extends Root<User> {
     return data;
   }
 
-  factory User.fromDocument(DocumentSnapshot doc) {
-    var user = User(
+  factory RUser.fromDocument(DocumentSnapshot doc) {
+    var user = RUser(
         id: doc['id'] as String,
         orgId: doc['orgId'] as String,
         context: doc['context'] as String,
@@ -71,8 +71,8 @@ class User extends Root<User> {
   }
 
   @override
-  User parse(DocumentSnapshot documentSnapshot) {
-    return User.fromDocument(documentSnapshot);
+  RUser parse(DocumentSnapshot documentSnapshot) {
+    return RUser.fromDocument(documentSnapshot);
   }
 
   Map<String, String> getLabels() {

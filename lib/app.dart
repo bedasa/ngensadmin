@@ -14,17 +14,17 @@ import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:ngens/layout/letter_spacing.dart';
 
 import 'package:ngens/colors.dart';
-import 'package:ngens/home.dart';
-import 'package:ngens/login.dart';
+import 'package:ngens/pages/home.dart';
+import 'package:ngens/pages/login.dart';
 
 import 'crud/masterHomePage.dart';
 
-/// The RallyApp is a MaterialApp with a theme and 2 routes.
+/// The ReflectApp is a MaterialApp with a theme and 2 routes.
 ///
 /// The home route is the main page with tabs for sub pages.
 /// The login route is the initial route.
-class RallyApp extends StatelessWidget {
-  const RallyApp({
+class ReflectApp extends StatelessWidget {
+  const ReflectApp({
     Key key,
     this.initialRoute,
     this.isTestMode = false,
@@ -35,6 +35,7 @@ class RallyApp extends StatelessWidget {
   static const String loginRoute = '/rally/login';
   static const String homeRoute = '/rally';
   static const String masterRoute = '/masters';
+  static const String editProfileRoute = '/users/edit';
 
   final sharedZAxisTransitionBuilder = const SharedAxisPageTransitionsBuilder(
     fillColor: RallyColors.primaryBackground,
@@ -56,7 +57,7 @@ class RallyApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return MaterialApp(
-            title: 'Rally',
+            title: 'Reflect',
             debugShowCheckedModeBanner: false,
             theme: _buildRallyTheme().copyWith(
               platform: GalleryOptions.of(context).platform,

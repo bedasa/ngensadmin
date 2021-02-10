@@ -21,3 +21,8 @@ const splashPageAnimationDurationInMilliseconds = 300;
 
 // The desktop top padding for a page's first header (e.g. Gallery, Settings)
 const firstHeaderDesktopTopPadding = 5.0;
+
+const xnihiloOpsId = '629bd30a-0e4f-5a81-bc9e-6fafd44dc2e6';
+const englishUs = 'en-US';
+const createdBySystem = 'system';
+const createdByUser = 'user';

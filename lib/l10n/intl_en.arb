@@ -311,7 +311,7 @@
   "@rallyTitleSettings": {
     "description": "The navigation link to the settings page."
   },
-  "rallyLoginLoginToRally": "Login to Rally",
+  "rallyLoginLoginToRally": "Login to Reflect",
   "@rallyLoginLoginToRally": {
     "description": "Title for login page for the Rally app (Rally does not need to be translated as it is a product name)."
   },

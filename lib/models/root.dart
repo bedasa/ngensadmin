@@ -78,7 +78,7 @@ abstract class Root<T> {
         obj = Organization.getLabels();
         break;
       case Root.user:
-        obj = User.getLables();
+        obj = RUser.getLables();
         break;
       case Root.institute:
         obj = Institute.getLabels();

@@ -11,17 +11,18 @@ import 'package:ngens/models/organization.dart';
 
 Future<void> main() async {
   GoogleFonts.config.allowRuntimeFetching = false;
-  runApp(const RallyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const ReflectApp());
   await initializeDB();
 }
 
 Future initializeDB() async {
-  await Firebase.initializeApp();
   var timestamp = DateTime.now();
   //orgid = 629bd30a-0e4f-5a81-bc9e-6fafd44dc2e6
   //userid =27f35724-0560-5b3c-b415-2ebe54b3c8ad
 
-  var superadmin = User(
+  var superadmin = RUser(
       id: '27f35724-0560-5b3c-b415-2ebe54b3c8ad',
       orgId: '629bd30a-0e4f-5a81-bc9e-6fafd44dc2e6',
       context: 'en-US',

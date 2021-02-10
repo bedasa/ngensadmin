@@ -12,7 +12,7 @@ import 'package:ngens/models/user.dart';
 import 'package:ngens/models/institute.dart';
 
 import '../colors.dart';
-import '../finance.dart';
+import '../pages/finance.dart';
 
 class MasterHomePage extends StatefulWidget {
   final String title;
@@ -27,7 +27,7 @@ class MasterHomePage extends StatefulWidget {
         obj = _MasterHomePageState<Organization>(lables);
         break;
       case Root.user:
-        obj = _MasterHomePageState<User>(lables);
+        obj = _MasterHomePageState<RUser>(lables);
         break;
       case Root.institute:
         obj = _MasterHomePageState<Institute>(lables);

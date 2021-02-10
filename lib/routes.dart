@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ngens/app.dart';
 
 typedef PathWidgetBuilder = Widget Function(BuildContext, String);
 
