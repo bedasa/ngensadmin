@@ -135,6 +135,7 @@ class _HomePageState extends State<HomePage>
     }
     return ApplyTextOptions(
       child: Scaffold(
+        appBar: AppBar(title: const Text('Dashboard')),
         body: SafeArea(
           // For desktop layout we do not want to have SafeArea at the top and
           // bottom to display 100% height content on the accounts view.
@@ -152,6 +153,41 @@ class _HomePageState extends State<HomePage>
               policy: OrderedTraversalPolicy(),
               child: tabBarView,
             ),
+          ),
+        ),
+        drawer: Drawer(
+          // Add a ListView to the drawer. This ensures the user can scroll
+          // through the options in the drawer if there isn't enough vertical
+          // space to fit everything.
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('Item 1'),
+                onTap: () {
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                onTap: () {
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+            ],
           ),
         ),
       ),
@@ -212,6 +248,72 @@ class _HomePageState extends State<HomePage>
       BudgetsView(),
       MastersView()
     ];
+  }
+
+  Widget getLeftMenu({BuildContext context, ThemeData theme}) {
+    final isTextDirectionRtl =
+        GalleryOptions.of(context).resolvedTextDirection() == TextDirection.rtl;
+    final verticalRotation =
+        isTextDirectionRtl ? turnsToRotateLeft : turnsToRotateRight;
+    final revertVerticalRotation =
+        isTextDirectionRtl ? turnsToRotateRight : turnsToRotateLeft;
+    return Row(
+      children: [
+        Container(
+          width: 150 + 50 * (cappedTextScale(context) - 1),
+          alignment: Alignment.topCenter,
+          padding: const EdgeInsets.symmetric(vertical: 32),
+          child: Column(
+            children: [
+              const SizedBox(height: 24),
+              ExcludeSemantics(
+                child: SizedBox(
+                  height: 80,
+                  child: Image.asset('images/reflectlogo.png'),
+                ),
+              ),
+              const SizedBox(height: 24),
+              // Rotate the tab bar, so the animation is vertical for desktops.
+              RotatedBox(
+                quarterTurns: verticalRotation,
+                child: _RallyTabBar(
+                  tabs: _buildTabs(
+                          context: context, theme: theme, isVertical: true)
+                      .map(
+                    (widget) {
+                      // Revert the rotation on the tabs.
+                      return RotatedBox(
+                        quarterTurns: revertVerticalRotation,
+                        child: widget,
+                      );
+                    },
+                  ).toList(),
+                  tabController: _tabController,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          // Rotate the tab views so we can swipe up and down.
+          child: RotatedBox(
+            quarterTurns: verticalRotation,
+            child: TabBarView(
+              controller: _tabController,
+              children: _buildTabViews().map(
+                (widget) {
+                  // Revert the rotation on the tab views.
+                  return RotatedBox(
+                    quarterTurns: revertVerticalRotation,
+                    child: widget,
+                  );
+                },
+              ).toList(),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
 

@@ -12,6 +12,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   syncfusion_flutter_calendar: ^18.4.32
+  flutter_form_builder: ^4.2.0
   table_calendar: ^2.3.3
   intl: ^0.16.1
   rapido: ^0.2.4

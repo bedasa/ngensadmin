@@ -265,7 +265,7 @@ class _BorderButton extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Navigator.of(context).pushNamed(ReflectApp.homeRoute);
+        Navigator.of(context).pushNamed(ReflectApp.registerRoute);
       },
       child: Text(text),
     );

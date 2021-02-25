@@ -9,6 +9,7 @@ import 'package:ngens/layout/adaptive.dart';
 import 'package:ngens/layout/text_scale.dart';
 import 'package:ngens/widgets/common.dart';
 
+import 'package:ngens/app.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:ngens/models/user.dart';
 import 'package:ngens/pages/create_account.dart';
@@ -84,18 +85,18 @@ class _MainView extends StatelessWidget {
     // 1) check if user exists in users collection in database (according to their id)
     final user = googleSignIn.currentUser;
     // ignore: missing_required_param
-    var loggedinUser = await RUser(id: user.id).getById();
+    currentUser = await RUser(id: user.id).getById();
 
-    if (loggedinUser != null &&
-        loggedinUser.exists &&
-        loggedinUser.username == null) {
+    if (currentUser != null &&
+        currentUser.exists &&
+        currentUser.username == null) {
       String username = await Navigator.push(
           context, MaterialPageRoute(builder: (context) => CreateAccount()));
       await auth.createUserInFirestore(
           user.id, user.displayName, user.email, user.photoUrl, username);
-    } else {
-      currentUser = loggedinUser;
     }
+
+    await Navigator.of(context).pushNamed(ReflectApp.homeRoute);
   }
 
   @override

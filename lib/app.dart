@@ -16,6 +16,7 @@ import 'package:ngens/layout/letter_spacing.dart';
 import 'package:ngens/colors.dart';
 import 'package:ngens/pages/home.dart';
 import 'package:ngens/pages/login.dart';
+import 'package:ngens/pages/user/register.dart';
 
 import 'crud/masterHomePage.dart';
 
@@ -36,6 +37,7 @@ class ReflectApp extends StatelessWidget {
   static const String homeRoute = '/rally';
   static const String masterRoute = '/masters';
   static const String editProfileRoute = '/users/edit';
+  static const String registerRoute = '/register';
 
   final sharedZAxisTransitionBuilder = const SharedAxisPageTransitionsBuilder(
     fillColor: RallyColors.primaryBackground,
@@ -75,6 +77,7 @@ class ReflectApp extends StatelessWidget {
             routes: <String, WidgetBuilder>{
               homeRoute: (context) => const HomePage(),
               loginRoute: (context) => const LoginPage(),
+              // registerRoute: (context) => const RegisterPage(),
               masterRoute: (context) {
                 var title = ModalRoute.of(context).settings.arguments as String;
                 return MasterHomePage(title: title);

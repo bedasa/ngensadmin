@@ -118,259 +118,263 @@
     description="Study description for Fortnightly."
     >A content-focused news app</string>
   <string
-    name="rallyDescription"
-    description="Study description for Rally."
+    name="ReflectDescription"
+    description="Study description for Reflect."
     >A personal finance app</string>
   <string
     name="replyDescription"
     description="Study description for Reply."
     >An efficient, focused email app</string>
   <string
-    name="rallyAccountDataChecking"
+    name="ReflectAccountDataChecking"
     description="Name for account made up by user."
     >Checking</string>
   <string
-    name="rallyAccountDataHomeSavings"
+    name="ReflectAccountDataHomeSavings"
     description="Name for account made up by user."
     >Home Savings</string>
   <string
-    name="rallyAccountDataCarSavings"
+    name="ReflectAccountDataCarSavings"
     description="Name for account made up by user."
     >Car Savings</string>
   <string
-    name="rallyAccountDataVacation"
+    name="ReflectAccountDataVacation"
     description="Name for account made up by user."
     >Vacation</string>
   <string
-    name="rallyAccountDetailDataAnnualPercentageYield"
+    name="ReflectAccountDetailDataAnnualPercentageYield"
     description="Title for account statistics. Below a percentage such as 0.10% will be displayed."
     >Annual Percentage Yield</string>
   <string
-    name="rallyAccountDetailDataInterestRate"
+    name="ReflectAccountDetailDataInterestRate"
     description="Title for account statistics. Below a dollar amount such as $100 will be displayed."
     >Interest Rate</string>
   <string
-    name="rallyAccountDetailDataInterestYtd"
+    name="ReflectAccountDetailDataInterestYtd"
     description="Title for account statistics. Below a dollar amount such as $100 will be displayed."
     >Interest YTD</string>
   <string
-    name="rallyAccountDetailDataInterestPaidLastYear"
+    name="ReflectAccountDetailDataInterestPaidLastYear"
     description="Title for account statistics. Below a dollar amount such as $100 will be displayed."
     >Interest Paid Last Year</string>
   <string
-    name="rallyAccountDetailDataNextStatement"
+    name="ReflectAccountDetailDataNextStatement"
     description="Title for an account detail. Below a date for when the next account statement is released."
     >Next Statement</string>
   <string
-    name="rallyAccountDetailDataAccountOwner"
+    name="ReflectAccountDetailDataAccountOwner"
     description="Title for an account detail. Below the name of the account owner will be displayed."
     >Account Owner</string>
   <string
-    name="rallyBillDetailTotalAmount"
+    name="ReflectBillDetailTotalAmount"
     description="Title for column where it displays the total dollar amount that the user has in bills."
     >Total Amount</string>
   <string
-    name="rallyBillDetailAmountPaid"
+    name="ReflectBillDetailAmountPaid"
     description="Title for column where it displays the amount that the user has paid."
     >Amount Paid</string>
   <string
-    name="rallyBillDetailAmountDue"
+    name="ReflectBillDetailAmountDue"
     description="Title for column where it displays the amount that the user has due."
     >Amount Due</string>
   <string
-    name="rallyBudgetCategoryCoffeeShops"
+    name="ReflectBudgetCategoryCoffeeShops"
     description="Category for budget, to sort expenses / bills in."
     >Coffee Shops</string>
   <string
-    name="rallyBudgetCategoryGroceries"
+    name="ReflectBudgetCategoryGroceries"
     description="Category for budget, to sort expenses / bills in."
     >Groceries</string>
   <string
-    name="rallyBudgetCategoryRestaurants"
+    name="ReflectBudgetCategoryRestaurants"
     description="Category for budget, to sort expenses / bills in."
     >Restaurants</string>
   <string
-    name="rallyBudgetCategoryClothing"
+    name="ReflectBudgetCategoryClothing"
     description="Category for budget, to sort expenses / bills in."
     >Clothing</string>
   <string
-    name="rallyBudgetDetailTotalCap"
+    name="ReflectBudgetDetailTotalCap"
     description="Title for column where it displays the total dollar cap that the user has for its budget."
     >Total Cap</string>
   <string
-    name="rallyBudgetDetailAmountUsed"
+    name="ReflectBudgetDetailAmountUsed"
     description="Title for column where it displays the dollar amount that the user has used in its budget."
     >Amount Used</string>
   <string
-    name="rallyBudgetDetailAmountLeft"
+    name="ReflectBudgetDetailAmountLeft"
     description="Title for column where it displays the dollar amount that the user has left in its budget."
     >Amount Left</string>
   <string
-    name="rallySettingsManageAccounts"
+    name="ReflectSettingsManageAccounts"
     description="Link to go to the page &apos;Manage Accounts."
     >Manage Accounts</string>
   <string
-    name="rallySettingsTaxDocuments"
+    name="ReflectSettingsTaxDocuments"
     description="Link to go to the page &apos;Tax Documents&apos;."
     >Tax Documents</string>
   <string
-    name="rallySettingsPasscodeAndTouchId"
+    name="ReflectSettingsPasscodeAndTouchId"
     description="Link to go to the page &apos;Passcode and Touch ID&apos;."
     >Passcode and Touch ID</string>
   <string
-    name="rallySettingsNotifications"
+    name="ReflectSettingsNotifications"
     description="Link to go to the page &apos;Notifications&apos;."
     >Notifications</string>
   <string
-    name="rallySettingsPersonalInformation"
+    name="ReflectSettingsPersonalInformation"
     description="Link to go to the page &apos;Personal Information&apos;."
     >Personal Information</string>
   <string
-    name="rallySettingsPaperlessSettings"
+    name="ReflectSettingsPaperlessSettings"
     description="Link to go to the page &apos;Paperless Settings&apos;."
     >Paperless Settings</string>
   <string
-    name="rallySettingsFindAtms"
+    name="ReflectSettingsFindAtms"
     description="Link to go to the page &apos;Find ATMs&apos;."
     >Find ATMs</string>
   <string
-    name="rallySettingsHelp"
+    name="ReflectSettingsHelp"
     description="Link to go to the page &apos;Help&apos;."
     >Help</string>
   <string
-    name="rallySettingsSignOut"
+    name="ReflectSettingsSignOut"
     description="Link to go to the page &apos;Sign out&apos;."
     >Sign out</string>
   <string
-    name="rallyAccountTotal"
+    name="ReflectAccountTotal"
     description="Title for &apos;total account value&apos; overview page, a dollar value is displayed next to it."
     >Total</string>
   <string
-    name="rallyBillsDue"
+    name="ReflectBillsDue"
     description="Title for &apos;bills due&apos; page, a dollar value is displayed next to it."
     >Due</string>
   <string
-    name="rallyBudgetLeft"
+    name="ReflectBudgetLeft"
     description="Title for &apos;budget left&apos; page, a dollar value is displayed next to it."
     >Left</string>
   <string
-    name="rallyAccounts"
+    name="ReflectAccounts"
     description="Link text for accounts page."
     >Accounts</string>
   <string
-    name="rallyBills"
+    name="ReflectBills"
     description="Link text for bills page."
     >Bills</string>
   <string
-    name="rallyBudgets"
+    name="ReflectBudgets"
     description="Link text for budgets page."
     >Budgets</string>
   <string
-    name="rallyAlerts"
+    name="ReflectAlerts"
     description="Title for alerts part of overview page."
     >Alerts</string>
   <string
-    name="rallySeeAll"
+    name="ReflectSeeAll"
     description="Link text for button to see all data for category."
     >SEE ALL</string>
   <string
-    name="rallyFinanceLeft"
+    name="ReflectFinanceLeft"
     description="Displayed as &apos;dollar amount left&apos;, for example $46.70 LEFT, for a budget category."
     > LEFT</string>
   <string
-    name="rallyTitleOverview"
+    name="ReflectTitleOverview"
     description="The navigation link to the overview page."
     >OVERVIEW</string>
   <string
-    name="rallyTitleAccounts"
+    name="ReflectTitleAccounts"
     description="The navigation link to the accounts page."
     >ACCOUNTS</string>
   <string
-    name="rallyTitleBills"
+    name="ReflectTitleBills"
     description="The navigation link to the bills page."
     >BILLS</string>
   <string
-    name="rallyTitleBudgets"
+    name="ReflectTitleBudgets"
     description="The navigation link to the budgets page."
     >BUDGETS</string>
   <string
-    name="rallyTitleSettings"
+    name="ReflectTitleSettings"
     description="The navigation link to the settings page."
     >SETTINGS</string>
   <string
-    name="rallyLoginLoginToRally"
-    description="Title for login page for the Rally app (Rally does not need to be translated as it is a product name)."
-    >Login to Rally</string>
+    name="ReflectLoginLoginToReflect"
+    description="Title for login page for the Reflect app (Reflect does not need to be translated as it is a product name)."
+    >Login to Reflect</string>
   <string
-    name="rallyLoginNoAccount"
+    name="ReflectLoginNoAccount"
     description="Prompt for signing up for an account."
     >Don&apos;t have an account?</string>
   <string
-    name="rallyLoginSignUp"
+    name="ReflectLoginSignUp"
     description="Button text to sign up for an account."
     >SIGN UP</string>
   <string
-    name="rallyLoginUsername"
+    name="ReflectLoginUsername"
     description="The username field in an login form."
     >Username</string>
   <string
-    name="rallyLoginPassword"
+    name="ReflectLoginEmail"
+    description="The email field in an login form."
+    >Username</string>
+  <string
+    name="ReflectLoginPassword"
     description="The password field in an login form."
     >Password</string>
   <string
-    name="rallyLoginLabelLogin"
+    name="ReflectLoginLabelLogin"
     description="The label text to login."
     >Login</string>
   <string
-    name="rallyLoginRememberMe"
+    name="ReflectLoginRememberMe"
     description="Text if the user wants to stay logged in."
     >Remember Me</string>
   <string
-    name="rallyLoginButtonLogin"
+    name="ReflectLoginButtonLogin"
     description="Text for login button."
     >LOGIN</string>
   <string
-    name="rallyAlertsMessageHeadsUpShopping"
+    name="ReflectAlertsMessageHeadsUpShopping"
     description="Alert message shown when for example, user has used more than 90% of their shopping budget."
     >Heads up, you’ve used up {percent} of your Shopping budget for this month.</string>
   <string
-    name="rallyAlertsMessageSpentOnRestaurants"
+    name="ReflectAlertsMessageSpentOnRestaurants"
     description="Alert message shown when for example, user has spent $120 on Restaurants this week."
     >You’ve spent {amount} on Restaurants this week.</string>
   <string
-    name="rallyAlertsMessageATMFees"
+    name="ReflectAlertsMessageATMFees"
     description="Alert message shown when for example, the user has spent $24 in ATM fees this month."
     >You’ve spent {amount} in ATM fees this month</string>
   <string
-    name="rallyAlertsMessageCheckingAccount"
+    name="ReflectAlertsMessageCheckingAccount"
     description="Alert message shown when for example, the checking account is 1% higher than last month."
     >Good work! Your checking account is {percent} higher than last month.</string>
   <string
-    name="rallyAlertsMessageUnassignedTransactions"
+    name="ReflectAlertsMessageUnassignedTransactions"
     description="Alert message shown when you have unassigned transactions."
     >{count, plural, =1{Increase your potential tax deduction! Assign categories to 1 unassigned transaction.}other{Increase your potential tax deduction! Assign categories to {count} unassigned transactions.}}</string>
   <string
-    name="rallySeeAllAccounts"
+    name="ReflectSeeAllAccounts"
     description="Semantics label for button to see all accounts. Accounts refer to bank account here."
     >See all accounts</string>
   <string
-    name="rallySeeAllBills"
+    name="ReflectSeeAllBills"
     description="Semantics label for button to see all bills."
     >See all bills</string>
   <string
-    name="rallySeeAllBudgets"
+    name="ReflectSeeAllBudgets"
     description="Semantics label for button to see all budgets."
     >See all budgets</string>
   <string
-    name="rallyAccountAmount"
+    name="ReflectAccountAmount"
     description="Semantics label for row with bank account name (for example checking) and its bank account number (for example 123), with how much money is deposited in it (for example $12)."
     >{accountName} account {accountNumber} with {amount}.</string>
   <string
-    name="rallyBillAmount"
+    name="ReflectBillAmount"
     description="Semantics label for row with a bill (example name is rent), when the bill is due (1/12/2019 for example) and for how much money ($12)."
     >{billName} bill due {date} for {amount}.</string>
   <string
-    name="rallyBudgetAmount"
+    name="ReflectBudgetAmount"
     description="Semantics label for row with a budget (housing budget for example), with how much is used of the budget (for example $5), the total budget (for example $100) and the amount left in the budget (for example $95)."
     >{budgetName} budget with {amountUsed} used of {amountTotal}, {amountLeft} left</string>
   <string

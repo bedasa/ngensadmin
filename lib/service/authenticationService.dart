@@ -75,14 +75,20 @@ class AuthenticationService {
   }
 
   Future<bool> signInGoogle() async {
-    // Reauthenticate user when app is opened
-    final googleSignInAccount =
-        await googleSignIn.signInSilently(suppressErrors: false);
-    if (googleSignInAccount != null) {
-      return true;
-    } else {
+    try {
+      // Reauthenticate user when app is opened
+      final googleSignInAccount =
+          await googleSignIn.signInSilently(suppressErrors: false);
+      if (googleSignInAccount != null) {
+        return true;
+      } else {
+        return false;
+      }
+    } on Exception catch (_) {
+      await googleSignIn.signOut();
       return false;
     }
+
     // // Detects when user signed in
     // googleSignIn.onCurrentUserChanged.listen((account) async {
     //   shouldNavigateToCreateAccount = await handleSignIn(account);
